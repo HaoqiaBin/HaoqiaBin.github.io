@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/zh-cn" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>Ender3V2安装3DTouch自动调平教程 | 探索的好奇心</title>
+  <meta name="description" content="经常使用3D打印机的朋友会发现有时候打印完东西后第二次打印，材料就不粘热床了，那是因为可能拆模型时把热床下的调平螺丝松了导致的，每次打印都进行调平热床太麻烦了，此时我们可以考虑升级一下打印机，加装自动调平配件。底层粘不好容易打废">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ender3V2安装3DTouch自动调平教程">
+<meta property="og:url" content="http://www.haoqiabin.cn/2022/10/04/Ender3V23DTouch/index.html">
+<meta property="og:site_name" content="探索的好奇心">
+<meta property="og:description" content="经常使用3D打印机的朋友会发现有时候打印完东西后第二次打印，材料就不粘热床了，那是因为可能拆模型时把热床下的调平螺丝松了导致的，每次打印都进行调平热床太麻烦了，此时我们可以考虑升级一下打印机，加装自动调平配件。底层粘不好容易打废">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/bad.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/3Dtouch.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/主板.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/配线.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/cover.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/支架.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/固件.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/格式化.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/安装.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/Z10.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/调平.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/Z19.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/存储配置.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/cura.jpg">
+<meta property="og:updated_time" content="2022-10-04T16:11:47.339Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ender3V2安装3DTouch自动调平教程">
+<meta name="twitter:description" content="经常使用3D打印机的朋友会发现有时候打印完东西后第二次打印，材料就不粘热床了，那是因为可能拆模型时把热床下的调平螺丝松了导致的，每次打印都进行调平热床太麻烦了，此时我们可以考虑升级一下打印机，加装自动调平配件。底层粘不好容易打废">
+<meta name="twitter:image" content="http://www.haoqiabin.cn/media/e3dv23dtouch/bad.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="探索的好奇心" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+  
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js"
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+  
+<!--谷歌广告代码-->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9437128820972214"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">好奇吖斌</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                            
+                                <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3DPriter/">3DPriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/">MakerFaire</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS4/">PS4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stino/">Stino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无人机/">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器人/">机器人</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://SexyCyborg.imgur.com">SexyCyborg</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jingwen-zhu.com">朱静文</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mikibx.com">MiKi</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.pengzhihui.xyz">野生钢铁侠</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yoyojacky.com">骑驴玩儿漂移</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiangnandao.com">抹茶</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://lingshunlab.com">凌顺</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.caiyuli.com">蔡雨利</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://xiaohudie.net/">小蝴蝶</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://panzhifei.xyz">潘智非</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://blogs.oopswow.com/">IAMLIUBO</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.dreamcstudio.cn/">梦程的小窝</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.yhi.moe/">Hello from Junde Yhi</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.it1995.cn">IT1995</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="/www.techshow.it1995.cn">IT1995博文数据汇总</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">喜欢折腾，爱好科技制作的好奇吖斌！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+    <div class="overlay">
+        <div class="slider-trigger"></div>
+        <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">好奇吖斌</a></h1>
+    </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">好奇吖斌</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <ul class="social">
+                    
+                        <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                    
+                        <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                    
+                        <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                    
+                        <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                    
+                </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Ender3V23DTouch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/10/04/Ender3V23DTouch/" class="article-date">
+      <time datetime="2022-10-04T14:59:36.000Z" itemprop="datePublished">2022-10-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ender3V2安装3DTouch自动调平教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3DPriter/">3DPriter</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>经常使用3D打印机的朋友会发现有时候打印完东西后第二次打印，材料就不粘热床了，那是因为可能拆模型时把热床下的调平螺丝松了导致的，每次打印都进行调平热床太麻烦了，此时我们可以考虑升级一下打印机，加装自动调平配件。<br><img src="/media/e3dv23dtouch/bad.jpg" alt="坏"><br>底层粘不好容易打废<br><a id="more"></a><br><img src="/media/e3dv23dtouch/3Dtouch.jpg" alt="3Dtouch"><br>3DTouch配件</p>
+<p>拆开机器下方的钣金盖板，查看Ender3V2机器主板版本号为V4.2.2，该主板是自带3DTouch自动调平接口的，不需要转接板，接口为XH2.54mm5pin端子，买到的2pin加3pin接头的自动调平配件接线需要改接头端子才能安装上打印机主板。<br><img src="/media/e3dv23dtouch/主板.jpg" alt="主板"><br>版本号V4.2.2主板上的G，V，IN，G，OUT为3Dtouch配件接口</p>
+<p><img src="/media/e3dv23dtouch/配线.jpg" alt="3Dtouch"><br>需要把2+3pin的杜邦头换成5pin的XH2.54的端子，线长1.5米比较合适自己要准备压端子钳，注意G，V，IN，G，OUT的线序不要弄反。</p>
+<p>自动调平配件还需要一个支架，安装在打印喷头旁边，我们可以到Thingiverse模型分享网站查找自动调平支架，这里推荐这个不需要额外螺丝固定的自动调平支架模型：<a href="https://www.thingiverse.com/thing:4462870" target="_blank" rel="external">https://www.thingiverse.com/thing:4462870</a><br><img src="/media/e3dv23dtouch/cover.png" alt="支架"><br>我们下载模型并打印出来备用。</p>
+<p><img src="/media/e3dv23dtouch/支架.jpg" alt="支架"><br>把3Dtouch自动调平配件安装到支架上</p>
+<p>到创想三维官网下载Ender3V2自动调平的固件<a href="https://www.crealitycloud.cn/software-firmware/firmware?type=2" target="_blank" rel="external">https://www.crealitycloud.cn/software-firmware/firmware?type=2</a><br><img src="/media/e3dv23dtouch/固件.png" alt="固件"><br>下载不带转换板的固件：Ender-3 V2 V2.0.8.5 BLtouch不带转接板的固件 </p>
+<p>1.格式化SD卡，文件系统选择FAT32，分配单元大小选择4096字节，别搞错了哈！<br><img src="/media/e3dv23dtouch/格式化.jpg" alt="3Dtouch"><br>2.格式化完成后把固件文件放置到SD卡内，固件文件重命名为短的文件名，经测试1234.bin和abcd.bin都是可以成功刷到固件<br>3.把SD卡插到主板卡槽上，上电，等一会，屏幕亮起，如果成功更新固件，查看界面会多了个调平选项<br>4.如果刷写固件不成功，更换固件文件名重复多试几次</p>
+<p><img src="/media/e3dv23dtouch/安装.jpg" alt="安装"><br>刷好调平固件后把3Dtouch自动调平配件接到主板接口上，再安装到喷头上，整理好线。原本的Z轴限位的接线可以拔开了</p>
+<p>安装完自动调平配件后我们还需要两个步骤才能打印，一定要按照步骤来！！<br>一、调平校准教程：<br>1.开启机器电源，按回原点，回原点后此时Z轴是10mm高度<br><img src="/media/e3dv23dtouch/Z10.jpg" alt="3Dtouch"><br>2.移动Z轴慢慢调往下，使喷嘴接近热床，关闭电机，移动喷头到热床四边，拧热床支撑板的4个调平旋钮，使热床与喷嘴相对有一个A4纸间距<br><img src="/media/e3dv23dtouch/调平.jpg" alt="3Dtouch"><br>3.记下Z轴偏移数据，此处为-1.9mm，把Z移动调整到0.00后在，在Z轴补偿调到-1.90mm<br><img src="/media/e3dv23dtouch/Z19.jpg" alt="3Dtouch"><br>4.设置完后记得按存储配置，不然设置Z轴补偿没有用<br><img src="/media/e3dv23dtouch/存储配置.jpg" alt="3Dtouch"><br>调平机器重复上面步骤直到打印完全粘合热床，第一次打印开始前我们还需要按屏幕上的调平按钮，机器会自动进行16点调平，调平好会记录热床数据。</p>
+<p>二、切片软件的开始G-code设置：<br>在G28自动归零的代码下面加G29，以Cura V5.0版本为例，打开菜单上偏好设置-&gt;配置cura-&gt;打印机-&gt;打印机设置进行添加代码<br><img src="/media/e3dv23dtouch/cura.jpg" alt="3Dtouch"><br>不过发现这样加运行会先加热再进行调平，调平时候喷头的温度就下降了，调平完再打印再升上来，这样打印容易造成第一层粘不住热床，那怎么解决呢？我们用文本编辑器打开切片导出的G-code文件，发现在这个开始G-code前Cura软件自己加了一段预热的G-code，我们手动把G28和G29加在最前面即可，像下面的代码那样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">;Generated with Cura_SteamEngine 5.0.0</span><br><span class="line">G28 ; Home all axes</span><br><span class="line">G29;加这个自动调平</span><br><span class="line">M140 S50</span><br><span class="line">M105</span><br><span class="line">M190 S50</span><br><span class="line">M104 S210</span><br><span class="line">M105</span><br><span class="line">M109 S210</span><br><span class="line">M82 ;absolute extrusion mode</span><br><span class="line">; Ender 3 Custom Start G-code</span><br><span class="line">G92 E0 ; Reset Extruder</span><br><span class="line">M501</span><br><span class="line">M420 S1</span><br><span class="line">G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed</span><br><span class="line">G1 X0.1 Y20 Z0.3 F5000.0 ; Move to start position</span><br><span class="line">G1 X0.1 Y200.0 Z0.3 F1500.0 E15 ; Draw the first line</span><br><span class="line">G1 X0.4 Y200.0 Z0.3 F5000.0 ; Move to side a little</span><br><span class="line">G1 X0.4 Y20 Z0.3 F1500.0 E30 ; Draw the second line</span><br><span class="line">G92 E0 ; Reset Extruder</span><br><span class="line">G1 Z2.0 F3000 ; Move Z Axis up little to prevent scratching of Heat Bed</span><br><span class="line">G1 X5 Y20 Z0.3 F5000.0 ; Move over to prevent blob squish</span><br><span class="line">M413 S0</span><br><span class="line">G92 E0</span><br><span class="line">G92 E0</span><br><span class="line">G1 F2700 E-5</span><br></pre></td></tr></table></figure></p>
+<p>这样每次打印开始前都会运行自动调平再进行加热了</p>
+<p>仅供交流学习，如有错误之处，麻烦请指正！！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2022/10/04/Ender3V23DTouch/">Ender3V2安装3DTouch自动调平教程</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
+        <p><span>发布时间:</span>2022-10-04, 22:59:36</p>
+        <p><span>最后更新:</span>2022-10-05, 00:11:47</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2022/10/04/Ender3V23DTouch/" title="Ender3V2安装3DTouch自动调平教程">http://www.haoqiabin.cn/2022/10/04/Ender3V23DTouch/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.haoqiabin.cn/2022/10/04/Ender3V23DTouch/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2022/08/21/pixelstick/">
+                    科技与摄影艺术，教你做一个刷图案的光绘棒！
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Ender3V2安装3DTouch自动调平教程　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2022/08/21/pixelstick/" title="下一篇: 科技与摄影艺术，教你做一个刷图案的光绘棒！">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/10/04/Ender3V23DTouch/">Ender3V2安装3DTouch自动调平教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/08/21/pixelstick/">科技与摄影艺术，教你做一个刷图案的光绘棒！</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/07/27/usefulcode/">Arduino一些有用的代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/07/06/nightlamp/">夜间好物--小汪变色夜灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/21/zhangla/">小制作分享-魔法悬浮装着？张拉结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/connectbt/">双蓝牙模块的配对连接设置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/19/CombatRobot/">迷你格斗机器人--铁角龙建造日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/musicbox/">卖萌ớ ₃ờ蓝牙音箱表情包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/BTPS4/">教程向--PS4手柄🎮做Arduino的控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/projector/">3D打印球型投影小夜灯💡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/MecanumWheelCar/">草稿版麦克纳姆轮小车</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/raspberry-oled/">解决树莓派驱动OLED(非SSD1306)花屏问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/gizwits_learn/">机智云学习笔记✏️</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/23/MakerFaireXiAn2017/">西安制汇节2017</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/RoboardPro/">Arduino UNO增强版Roboard Pro测试与使用说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/pet-toy/">宠物互动--逗宠萌物🐱(程序与轮子有更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/led-robot/">点阵LED卖萌表情包(*_*)+假唱机器人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/drone/">组装穿越机</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/MakerFaireShenZhen2016/">深圳制汇节2016</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/10/teacherday/">红棉创客8小时造物工坊与广州图书馆首届创客大赛启动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/sublime-stino/">替代Arduino IDE的Sublime Text的插件---Stino</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/29/MakerEDU/">广州创客教育展</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/hello-world/">Hello World!</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2022 好奇吖斌
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
