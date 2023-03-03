@@ -179,7 +179,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3DPriter/">3DPriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/">MakerFaire</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS4/">PS4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stino/">Stino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无人机/">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器人/">机器人</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3DPriter/">3DPriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LED/">LED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/">MakerFaire</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS4/">PS4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stino/">Stino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无人机/">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器人/">机器人</a></li></ul>
                     </div>
                 </section>
                 
@@ -283,6 +283,68 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-ESP32driveLED" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/03/03/ESP32driveLED/" class="article-date">
+      <time datetime="2023-03-03T02:54:51.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/03/03/ESP32driveLED/">ESP32驱动可编程灯带闪烁解决方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>由于部分单片机和设备是3.3V电压工作，部分单片机和传感器是5V电压工作，当两者需要通信的时候就会出现工作电压不一致的情况，会使传感器和设备不正常工作，此时需要进行电平转换作为桥接解决电压不一致的问题。ESP32的工作电压为3.3V，信号输出也是3.3V,LED灯带信号正常的工作电压为5V,所以容易出现闪烁的问题。</p>
+<h1 id="3-3v-5v电平转换模块："><a href="#3-3v-5v电平转换模块：" class="headerlink" title="3.3v-5v电平转换模块："></a><strong>3.3v-5v电平转换模块：</strong></h1><center><img src="/media/ESP32driveLED/Levelconversion.jpg" alt="电平转换"></center>
+
+<h1 id="信号放大器："><a href="#信号放大器：" class="headerlink" title="信号放大器："></a><strong>信号放大器：</strong></h1><center><img src="/media/ESP32driveLED/signal.jpg" alt="信号放大"></center>
+
+<h1 id="接线方法："><a href="#接线方法：" class="headerlink" title="接线方法："></a><strong>接线方法：</strong></h1><center><img src="/media/ESP32driveLED/connect.png" alt="接线方法"></center>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LED/">LED</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Ender3V23DTouch" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -526,64 +588,6 @@
 
 
   
-    <article id="post-zhangla" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/02/21/zhangla/" class="article-date">
-      <time datetime="2020-02-20T17:34:27.000Z" itemprop="datePublished">2020-02-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/21/zhangla/">小制作分享-魔法悬浮装着？张拉结构</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><center><img src="/media/zhangla/fengmian.jpg" alt="fengmian"></center><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/02/21/zhangla/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
@@ -595,7 +599,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2022 好奇吖斌
+                2016-2023 好奇吖斌
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
